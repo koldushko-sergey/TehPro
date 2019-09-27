@@ -130,53 +130,6 @@ Public Class TechOperation
         Return cod
     End Function
 
-    'Private Sub tsmiAddTO_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiAddTO.Click
-    '    Dim maxNumber As Integer
-    '    Dim nextCod As String = String.Empty
-
-    '    tbNameTO.Text = String.Empty
-    '    tbRemarkTO.Text = String.Empty
-
-    '    'Формирование кода ТО
-    '    query = "SELECT MAX(CodIdRight) as 'Cod' FROM TehOperation"
-    '    If ClassDbEcadmaster.ExecuteScalar(query) <> "" Then
-    '        maxNumber = ClassDbEcadmaster.ExecuteScalar(query)
-    '        tbIncrementCode.Text = Convert.ToString(maxNumber)
-    '    Else
-    '        tbIncrementCode.Text = "000000001"
-    '    End If
-
-
-    '    'query = "SELECT id, StatusName FROM Status WHERE Type = 2"
-    '    'dt = ClassDbEcadmaster.FillDataTable(query)
-    '    'cbStatusAddTO.DataSource = dt.Copy()
-    '    'cbStatusAddTO.DisplayMember = "StatusName"
-    '    'cbStatusAddTO.ValueMember = "id"
-
-    '    query = "SELECT id, NamePodr FROM KatPodr WHERE Cex <> 0 AND Cex <> 999 AND NamePodr not like '%Сборщик%' AND Cex <= 5 ORDER BY NomRes"
-    '    dt = ClassDbEcadmaster.FillDataTable(query)
-    '    cbAreaAddTO.DataSource = dt.Copy()
-    '    cbAreaAddTO.DisplayMember = "NamePodr"
-    '    cbAreaAddTO.ValueMember = "id"
-
-    '    query = "SELECT id, name FROM Equipment"
-    '    dt = ClassDbEcadmaster.FillDataTable(query)
-    '    cbEquipmentAddTO.DataSource = dt.Copy()
-    '    cbEquipmentAddTO.DisplayMember = "Name"
-    '    cbEquipmentAddTO.ValueMember = "id"
-
-    '    query = "SELECT id, Name FROM TypeTransaction"
-    '    dt = ClassDbEcadmaster.FillDataTable(query)
-    '    cbTypeAddOP.DataSource = dt.Copy()
-    '    cbTypeAddOP.DisplayMember = "Name"
-    '    cbTypeAddOP.ValueMember = "id"
-
-    '    dtpDateCreateTO.Value = New Date(Now.Year, Now.Month, Now.Day)
-    '    dtpDateEndTO.Value = New Date(Now.Year, Now.Month, Now.Day)
-
-    '    pnAddTehOperation.Visible = True
-    'End Sub
-
     Private Sub loadComboBoxStatus()
         query = "SELECT id, StatusName FROM Status WHERE Type = 2"
         dt = ClassDbWorkBase.FillDataTable(query)
@@ -657,18 +610,6 @@ Public Class TechOperation
 
         pnAddTehOperation.Visible = True
     End Sub
-
-    'Private Sub tsmiToUntieTO_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiToUntieTO.Click
-    '    If gcChronometrageView.SelectedRowsCount = 0 Then
-    '        Return
-    '    End If
-
-    '    If MessageBox.Show("Хотите отвязать ТО: " + gcTehOperationView.GetRowCellValue(gcTehOperationView.FocusedRowHandle, "Наименование").ToString(), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-    '        query = "" + gcTehProcessView.GetRowCellValue(gcTehProcessView.FocusedRowHandle, "id").ToString() + " ___ " + gcTehOperationView.GetRowCellValue(gcTehOperationView.FocusedRowHandle, "id").ToString()
-    '        MessageBox.Show(query)
-    '    End If
-
-    'End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim form_ As New CardTehProcess
